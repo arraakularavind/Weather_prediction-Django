@@ -6,6 +6,7 @@ Features:
   * Predict future weather conditions using a Linear Regression model.
     
 To Execute following these Steps:
+
     * # Create a virtual environment named 'project'
       python -m venv project
     * # Activate the virtual environment
