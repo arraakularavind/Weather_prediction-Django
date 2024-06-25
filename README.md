@@ -20,6 +20,7 @@ To Execute following these Steps:
     * python manage.py startapp weather
             * define views.py---> Once the frontend functions are implemented, the server should respond appropriately based on the defined views.   
     * Create a folder named Templates--> This folder contains HTML pages for client-server interactions, with each page performing its specific function as defined by the backend logic
+    * Configure url.py---> to map views to URL  
     * To the Store the user input; Create your database schema in model.py and execute
     * python manage.py makemigrations
       python manage.py migrate
