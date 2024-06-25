@@ -24,6 +24,10 @@ To Execute following these Steps:
     * python manage.py makemigrations
       python manage.py migrate
 
+Handling Package Errors:
+* If any package errors occur during installation, kindly install the required packages using the pip command. 
+For example: pip install <package>
+
   
 
 
