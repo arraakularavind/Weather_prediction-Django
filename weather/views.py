@@ -14,7 +14,7 @@ def authication(city):
    data=response.json()
    return data
 def get():
-   api_key="737f3b673bbbf96be7ba3490c827f249"
+   api_key=""    # define your api_key by registering
    return api_key
 
 def get_weather(request):
