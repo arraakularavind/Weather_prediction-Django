@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Weather Record Search based on Temp</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYl8I97liMTLQIfpgukTshU4w6JNJWoGQkdA&s');
+           background-size: cover;
+           background-repeat: no-repeat;
+           background-attachment: fixed;
+           color: #333;
+           margin: 0;
+           padding: 20px;
+       }
+       h1, h2 {
+           color: #ffffff;
+           text-align: center;
+           text-shadow: 2px 2px 4px #000000;
+       }
+       table {
+           width: 80%;
+           margin: 20px auto;
+           border-collapse: collapse;
+           background-color: rgba(255, 255, 255, 0.8);
+           border-radius: 10px;
+           overflow: hidden;
+       }
+       th, td {
+           padding: 12px;
+           text-align: center;
+           border-bottom: 1px solid #ddd;
+       }
+       th {
+           background-color: #4a90e2;
+           color: #ffffff;
+       }
+       tr:nth-child(even) {
+           background-color: #f2f2f2;
+       }
+       tr:hover {
+           background-color: #ddd;
+       }
+       p {
+           text-align: center;
+           background-color: rgba(255, 255, 255, 0.8);
+           padding: 20px;
+           border-radius: 10px;
+           max-width: 600px;
+           margin: 20px auto;
+       }
+       a {
+           display: block;
+           width: fit-content;
+           margin: 20px auto;
+           padding: 10px 20px;
+           background-color: #4a90e2;
+           color: #ffffff;
+           text-align: center;
+           text-decoration: none;
+           border-radius: 5px;
+       }
+       a:hover {
+           background-color: #357ab8;
+       }
+   </style>
+</head>
+<body>
+   <h1>Stored Weather Records based on Temperature</h1>
+   {% if weather_data %}
+       <h2>Results for Temperature:</h2>
+       <table>
+           <tr>
+               <th>City</th>
+               <th>Temperature (°C)</th>
+           </tr>
+           {% for record in weather_data %}
+           <tr>
+               <td>{{ record.city }}</td>
+               <td>{{ record.temperature }}</td>
+           </tr>
+           {% endfor %}
+       </table>
+   {% else %}
+       <p>No results found for the given temperature.</p>
+   {% endif %}
+   <a href="{% url 'get_weather' %}">Back to Weather Prediction</a>
+</body>
+</html>

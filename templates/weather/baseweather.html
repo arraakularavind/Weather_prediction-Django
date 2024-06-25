@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> WEATHER PREDICTION </title>
+</head>
+<body>
+   <h1> Weather Prediction</h1>
+   <form method="post" action="">
+     {% csrf_token %}
+     <input type="text" name="city" placeholder="Enter City">
+     <input type="text" name="temp" placeholder="Enter Temperature">
+     <button type="Submit" name="submit">Get Weather</button>
+     <button type="Submit" name="show"> Search by City</button>
+     <button type="Submit" name="search"> Search by Temp</button>
+   </form>
+
+  {% if city%}
+     <h2> Weather in {{city}}</h2>
+     <p> Temperature: {{temperature }} *C </p>
+     <p> Feeling_Temperature: {{Feeling}} *C </p>
+     <p> Mini_Temperature: {{Min_temp}} *C </p>
+     <p> Maxi_Temperature: {{Max_temp}} *C </p>
+     <P> Description : {{ description }} </p>
+     <img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="{{ description }}">
+     <p> humidity: {{humidity }}</p>
+     <p> wind_speed: {{wind_speed}}</p>
+     <p> wind_direction: {{wind_direction}}</p>
+     <p> UV_INDEX: {{uv_index}}</p>
+     <p> AIR_QUALITY: {{air_quality_index}}</p>
+     <p> latitude: {{latitude}}</p>
+     <p> longitude: {{longitude}}</p>
+  {% elif error %}
+     <p>{{ error }}</p>
+  {% endif %}
+</body>
+</html>
+     
